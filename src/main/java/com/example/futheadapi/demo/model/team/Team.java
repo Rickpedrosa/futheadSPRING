@@ -65,4 +65,15 @@ public class Team {
     public void setQuality(float quality) {
         this.quality = quality;
     }
+
+    @SuppressWarnings("EqualsWhichDoesntCheckParameterClass")
+    @Override
+    public boolean equals(Object obj) {
+        return ((Team) obj).club.equals(this.club);
+    }
+
+    @Override
+    public int hashCode() {
+        return club.hashCode();
+    }
 }

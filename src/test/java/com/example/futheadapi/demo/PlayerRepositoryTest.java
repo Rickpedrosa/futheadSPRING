@@ -30,16 +30,16 @@ public class PlayerRepositoryTest {
         List<PlayerWithPosSQLBridge> source = playerRepository.findPlayerWithPositions("FC Barcelona");
         assertNotNull(source);
         Set<PlayerWithPos> players_names = new LinkedHashSet<>();
-        source.forEach(it -> players_names.add(new PlayerWithPos(
-                it.getId(),
-                it.getPlayer_name(),
-                it.getPlayer_photo(),
-                it.getPlayer_nationality(),
-                it.getPlayer_potential(),
-                it.getPlayer_club(),
-                it.getPlayer_price(),
-                new ArrayList<>()
-        )));
+//        source.forEach(it -> players_names.add(new PlayerWithPos(
+//                it.getId(),
+//                it.getPlayer_name(),
+//                it.getPlayer_photo(),
+//                it.getPlayer_nationality(),
+//                it.getPlayer_potential(),
+//                it.getPlayer_club(),
+//                it.getPlayer_price(),
+//                new ArrayList<>()
+//        )));
         List<PlayerWithPos> players = new ArrayList<>(players_names);
         source.forEach(it -> players.forEach(p -> {
             if (it.getId() == p.getId()) {
@@ -47,7 +47,8 @@ public class PlayerRepositoryTest {
             }
         }));
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        System.out.println(gson.toJson(players_names));
+//        System.out.println(gson.toJson(players_names));
+        players.forEach(it -> System.out.println(it.toString()));
     }
 
 }

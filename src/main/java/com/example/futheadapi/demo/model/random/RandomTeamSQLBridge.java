@@ -1,6 +1,15 @@
 package com.example.futheadapi.demo.model.random;
 
 public interface RandomTeamSQLBridge {
+    String getClub();
+
+    String getClub_logo();
+
+    float getAverage();
+
+    float getAverage_team();
+
+    float getQuality();
 
     int getId();
 

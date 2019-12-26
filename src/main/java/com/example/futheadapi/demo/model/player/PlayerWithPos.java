@@ -1,13 +1,15 @@
 package com.example.futheadapi.demo.model.player;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerWithPos extends Player {
     private List<String> player_pos;
 
-    public PlayerWithPos(int id, String player_name, String player_photo, String player_nationality, int player_potential, String player_club, int player_price, List<String> player_pos) {
+    public PlayerWithPos(int id, String player_name, String player_photo, String player_nationality,
+                         int player_potential, String player_club, int player_price) {
         super(id, player_name, player_photo, player_nationality, player_potential, player_club, player_price);
-        this.player_pos = player_pos;
+        this.player_pos = new ArrayList<>();
     }
 
     public List<String> getPlayer_pos() {

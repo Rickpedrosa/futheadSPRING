@@ -5,7 +5,7 @@ import com.example.futheadapi.demo.model.player.PlayerWithPos;
 
 import java.util.List;
 
-public interface PlayerRepositoryContract {
+public interface PlayerRepositoryImpl {
     Player findById(int id);
 
     List<PlayerWithPos> findPlayerWithPositions(String club);
