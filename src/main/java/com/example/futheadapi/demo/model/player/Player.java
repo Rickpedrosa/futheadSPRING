@@ -1,4 +1,4 @@
-package com.example.futheadapi.demo.model;
+package com.example.futheadapi.demo.model.player;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -97,5 +97,16 @@ public class Player {
                 ", player_club='" + player_club + '\'' +
                 ", player_price=" + player_price +
                 '}';
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
+
+    @SuppressWarnings("EqualsWhichDoesntCheckParameterClass")
+    @Override
+    public boolean equals(Object obj) {
+        return ((Player) obj).id == this.id;
     }
 }
